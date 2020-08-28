@@ -24,6 +24,7 @@ public class OrdersParserApplication {
 
         List<File> files = Arrays.stream(args).map(File::new).collect(Collectors.toList());
         ctx.getBean(OrderFilesHandler.class).handleFiles(files);
+        ctx.close();
     }
 
     @Bean

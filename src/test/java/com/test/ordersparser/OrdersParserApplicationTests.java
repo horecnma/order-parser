@@ -1,13 +1,10 @@
 package com.test.ordersparser;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.Test;
@@ -51,30 +48,6 @@ class OrdersParserApplicationTests {
 		assertThat(resultString).isEqualTo(expectedResultString);
     }
 
-    @Test
-    void testBig()
-            throws IOException {
-        List builder = setupOutput2();
-
-        orderFilesHandler.handleFiles(Arrays.asList(new File("D:\\projects\\big.json"), csv.getFile()));
-
-        System.out.println(builder.get(0));
-    }
-
-    private List setupOutput2() {
-        List<Integer> i = new ArrayList();
-        i.add(0);
-        Mockito.doAnswer((Answer<Object>) invocationOnMock -> {
-            int element = i.get(0) + 1;
-            if (element % 50000 == 0) {
-                System.out.println(invocationOnMock.getArguments()[0]);
-            }
-            i.set(0, element);
-            return null;
-        }).when(outputStream).println(ArgumentMatchers.anyString());
-        return i;
-    }
-
     private StringBuilder setupOutput() {
         StringBuilder b = new StringBuilder();
         Mockito.doAnswer((Answer<Object>) invocationOnMock -> {
@@ -83,5 +56,4 @@ class OrdersParserApplicationTests {
         }).when(outputStream).println(ArgumentMatchers.anyString());
         return b;
     }
-
 }
