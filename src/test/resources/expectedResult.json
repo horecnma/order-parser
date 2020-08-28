@@ -1,0 +1,7 @@
+{"id":"1","amount":11,"comment":"оплата заказа 1","filename":"orders.json","line":1,"result":"OK"}
+{"id":"1","amount":110.32,"comment":"оплата заказа 100","filename":"orders.csv","line":1,"result":"OK"}
+{"id":"2","amount":12,"comment":"оплата заказа 2","filename":"orders.json","line":2,"result":"OK"}
+{"id":"2","amount":120.32,"comment":"оплата заказа 200","filename":"orders.csv","line":2,"result":"OK"}
+{"id":"3","amount":130.32,"comment":"оплата заказа 300","filename":"orders.csv","line":3,"result":"OK"}
+{"id":null,"amount":null,"comment":null,"filename":"orders.csv","line":4,"result":"Can't parse csv line 4 '4130.32USD,error in csv'. Error: 3"}
+{"id":null,"amount":null,"comment":null,"filename":"orders.json","line":3,"result":"Can't parse json line 3 '{\"orderId\":3,\"amount\":12,asdfasdf\"currency\":\"USD\",\"comment\":\"error in json\"}'. Error: Unexpected character ('a' (code 97)): was expecting double-quote to start field name\n at [Source: (String)\"{\"orderId\":3,\"amount\":12,asdfasdf\"currency\":\"USD\",\"comment\":\"error in json\"}\"; line: 1, column: 27]"}
