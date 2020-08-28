@@ -1,4 +1,4 @@
-package com.test.ordersparser.services;
+package com.test.ordersparser.services.impl;
 
 import java.io.Closeable;
 import java.util.Iterator;

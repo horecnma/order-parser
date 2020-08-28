@@ -1,4 +1,4 @@
-package com.test.ordersparser.services;
+package com.test.ordersparser.services.impl;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.test.ordersparser.dto.ParsedOrder;
+import com.test.ordersparser.services.OrderParser;
 
 /**
  * @author Mikhail

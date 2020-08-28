@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import com.test.ordersparser.dto.ParsedOrder;
+import com.test.ordersparser.services.impl.CloseableIterator;
 
 /**
  * @author Mikhail
