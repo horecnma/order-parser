@@ -2,7 +2,6 @@ package com.test.ordersparser;
 
 import java.io.IOException;
 import java.io.PrintStream;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -40,12 +39,12 @@ class OrdersParserApplicationTests {
             throws IOException {
         StringBuilder builder = setupOutput();
 
-		orderFilesHandler.handleFiles(Arrays.asList(json.getFile(), csv.getFile()));
+        orderFilesHandler.handleFiles(Arrays.asList(json.getFile(), csv.getFile()));
 
-		String[] lines = builder.toString().split("\n");
-		String resultString = Arrays.stream(lines).sorted().collect(Collectors.joining("\r\n"));
-		String expectedResultString = new String(Files.readAllBytes(expectedResult.getFile().toPath()), StandardCharsets.UTF_8).trim();
-		assertThat(resultString).isEqualTo(expectedResultString);
+        String[] lines = builder.toString().split("\n");
+        String resultString = Arrays.stream(lines).sorted().collect(Collectors.joining("\n"));
+        String expectedResultString  = Files.readAllLines(expectedResult.getFile().toPath()).stream().collect(Collectors.joining("\n"));
+        assertThat(resultString).isEqualTo(expectedResultString);
     }
 
     private StringBuilder setupOutput() {
